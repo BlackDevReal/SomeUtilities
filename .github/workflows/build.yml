@@ -16,12 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Manually install OpenJDK 23 from Adoptium
+      # Manually install OpenJDK 23
       - name: Set up OpenJDK 23
         run: |
-          # Download and install OpenJDK 23 from Adoptium
-          wget https://github.com/adoptium/temurin23-binaries/releases/download/jdk-23+36/OpenJDK23U-jdk_x64_linux_23_36.tar.gz
-          tar -xvf OpenJDK23U-jdk_x64_linux_23_36.tar.gz
+          # Download and install OpenJDK 23
+          wget https://github.com/adoptium/temurin23-binaries/releases/download/jdk-23.0.2+7/OpenJDK23U-jdk_x64_linux_hotspot_23.0.2_7.tar.gz
+          tar -xvf OpenJDK23U-jdk_x64_linux_hotspot_23.0.2_7.tar.gz
           sudo mv jdk-23 /opt/
           sudo update-alternatives --install /usr/bin/java java /opt/jdk-23/bin/java 1
           sudo update-alternatives --set java /opt/jdk-23/bin/java
